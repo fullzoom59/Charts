@@ -23,8 +23,8 @@ struct ContentView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     Picker("Selected Step", selection: $selectedState) {
-                        ForEach(HealthMetricContext.allCases) { metric in
-                            Text(metric.title)
+                        ForEach(HealthMetricContext.allCases) {
+                            Text($0.title)
                         }
                     }
                     .pickerStyle(.segmented)
@@ -73,7 +73,6 @@ struct ContentView: View {
                             Image(systemName: "chevron.right")
                                 .foregroundStyle(.secondary)
                         }
-                            
                         .padding(.bottom, 12)
                        
                         RoundedRectangle(cornerRadius: 12)
