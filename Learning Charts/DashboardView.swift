@@ -67,14 +67,15 @@ struct ContentView: View {
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
-                            
+                                
                             Spacer()
-                            
+                                
                             Image(systemName: "chevron.right")
                                 .foregroundStyle(.secondary)
                         }
+                            
                         .padding(.bottom, 12)
-                        
+                       
                         RoundedRectangle(cornerRadius: 12)
                             .frame(height: 240)
                             .foregroundStyle(.secondary)
@@ -89,7 +90,7 @@ struct ContentView: View {
             .padding()
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in
-                Text(metric.title)
+                HealthDataListView(metric: metric)
             }
         }
         .tint(isSteps ? .pink : .indigo)
