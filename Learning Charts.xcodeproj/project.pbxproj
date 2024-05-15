@@ -14,6 +14,7 @@
 		4012DA5A2BF29B8600532FB8 /* HealthDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4012DA592BF29B8600532FB8 /* HealthDataListView.swift */; };
 		403440C22BF52EE300E9F897 /* HealthKitPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403440C12BF52EE300E9F897 /* HealthKitPermissionView.swift */; };
 		403440C62BF534E700E9F897 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403440C52BF534E700E9F897 /* HealthKitManager.swift */; };
+		403440C82BF53F8200E9F897 /* Learning-Charts-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 403440C72BF53F8200E9F897 /* Learning-Charts-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		403440C12BF52EE300E9F897 /* HealthKitPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionView.swift; sourceTree = "<group>"; };
 		403440C32BF5331200E9F897 /* Learning Charts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Learning Charts.entitlements"; sourceTree = "<group>"; };
 		403440C52BF534E700E9F897 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		403440C72BF53F8200E9F897 /* Learning-Charts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Learning-Charts-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				4012DA4D2BF2898E00532FB8 /* DashboardView.swift */,
 				4012DA592BF29B8600532FB8 /* HealthDataListView.swift */,
 				403440C12BF52EE300E9F897 /* HealthKitPermissionView.swift */,
+				403440C72BF53F8200E9F897 /* Learning-Charts-Info.plist */,
 				4012DA4F2BF2898F00532FB8 /* Assets.xcassets */,
 				4012DA512BF2898F00532FB8 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			files = (
 				4012DA532BF2898F00532FB8 /* Preview Assets.xcassets in Resources */,
 				4012DA502BF2898F00532FB8 /* Assets.xcassets in Resources */,
+				403440C82BF53F8200E9F897 /* Learning-Charts-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +293,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Learning Charts/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Learning-Charts-Info.plist";
+				INFOPLIST_FILE = "Learning Charts/Learning-Charts-Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The apps shows your step and weight data in interactive chart";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "The apps allows you to add step and weight data to Apple Health";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -321,7 +325,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Learning Charts/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Learning-Charts-Info.plist";
+				INFOPLIST_FILE = "Learning Charts/Learning-Charts-Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "The apps shows your step and weight data in interactive chart";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "The apps allows you to add step and weight data to Apple Health";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
