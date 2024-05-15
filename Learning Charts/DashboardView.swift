@@ -12,7 +12,7 @@ enum HealthMetricContext: CaseIterable, Identifiable {
     }
 }
 
-struct ContentView: View {
+struct DashboardView: View {
     @State private var selectedState: HealthMetricContext = .steps
     var isSteps: Bool {
         return selectedState == .steps
@@ -97,5 +97,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DashboardView()
 }
