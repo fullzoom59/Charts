@@ -94,7 +94,7 @@ struct DashboardView: View {
                 isShowingPermissionView = !hasSeenPermission
             }
             .task {
-//                await healthKitManager.addSimulatorData()
+                // fetch statistics...
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in

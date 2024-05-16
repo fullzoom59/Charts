@@ -6,6 +6,28 @@ class HealthKitManager {
     let store = HKHealthStore()
     let types: Set = [HKQuantityType(.stepCount), HKQuantityType(.bodyMass)]
     
+    func fetchStatistics(type: HKQuantityTypeIdentifier, options: HKStatisticsOptions) async {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: .now)
+        let endDate = calendar.date(byAdding: .day, value: 1, to: today)!
+        let startDate = calendar.date(byAdding: .day, value: -28, to: endDate)!
+        
+        let queryPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        let samplePrecidate = HKSamplePredicate.quantitySample(type: HKQuantityType(type), predicate: queryPredicate)
+        
+        let query = HKStatisticsCollectionQueryDescriptor(
+            predicate: samplePrecidate,
+            options: options,
+            anchorDate: endDate,
+            intervalComponents: .init(day: 1)
+        )
+        do {
+            let data = try await query.result(for: store)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     func addSimulatorData() async {
         var mockSamples: [HKQuantitySample] = []
         
