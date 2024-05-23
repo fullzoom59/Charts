@@ -1,4 +1,5 @@
 import SwiftUI
+import Charts
 
 enum HealthMetricContext: CaseIterable, Identifiable {
     case steps, weight
@@ -50,9 +51,15 @@ struct DashboardView: View {
                         }
                         .foregroundStyle(.secondary)
                         
-                        RoundedRectangle(cornerRadius: 12)
-                            .frame(height: 150)
-                            .foregroundStyle(.secondary)
+                        Chart {
+                            ForEach(healthKitManager.stepData) { step in
+                                BarMark(
+                                    x: .value("Date", step.date, unit: .day),
+                                    y: .value("Steps", step.value)
+                                )
+                            }
+                        }
+                        .frame(height: 150)
                     }
                     .padding()
                     .background(
@@ -94,7 +101,8 @@ struct DashboardView: View {
                 isShowingPermissionView = !hasSeenPermission
             }
             .task {
-                // fetch statistics...
+                await healthKitManager.fetchStatistics(type: .stepCount, options: .cumulativeSum)
+                isShowingPermissionView = !hasSeenPermission
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in
