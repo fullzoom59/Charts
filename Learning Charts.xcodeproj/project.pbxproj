@@ -21,6 +21,7 @@
 		40630C622C00D5740052BBB9 /* ChartDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40630C612C00D5740052BBB9 /* ChartDataTypes.swift */; };
 		40630C652C00D63C0052BBB9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40630C642C00D63C0052BBB9 /* Date+Extension.swift */; };
 		40630C682C00D98B0052BBB9 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 40630C672C00D98B0052BBB9 /* Algorithms */; };
+		40630C6A2C00DDEB0052BBB9 /* StepPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40630C692C00DDEB0052BBB9 /* StepPieChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		40630C5F2C00D4F90052BBB9 /* ChartMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMath.swift; sourceTree = "<group>"; };
 		40630C612C00D5740052BBB9 /* ChartDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataTypes.swift; sourceTree = "<group>"; };
 		40630C642C00D63C0052BBB9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		40630C692C00DDEB0052BBB9 /* StepPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPieChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				405CC9C42BFFCD3A00406120 /* StepBarChart.swift */,
+				40630C692C00DDEB0052BBB9 /* StepPieChart.swift */,
 				40630C5F2C00D4F90052BBB9 /* ChartMath.swift */,
 				40630C612C00D5740052BBB9 /* ChartDataTypes.swift */,
 			);
@@ -272,6 +275,7 @@
 				4012DA4C2BF2898E00532FB8 /* Learning_ChartsApp.swift in Sources */,
 				40630C602C00D4F90052BBB9 /* ChartMath.swift in Sources */,
 				40374DA72BFF8294002E07AD /* HealthMetric.swift in Sources */,
+				40630C6A2C00DDEB0052BBB9 /* StepPieChart.swift in Sources */,
 				40630C622C00D5740052BBB9 /* ChartDataTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

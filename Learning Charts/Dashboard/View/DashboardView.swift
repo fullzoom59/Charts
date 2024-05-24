@@ -36,33 +36,7 @@ struct DashboardView: View {
                    
                     StepBarChart(selectedState: selectedState, chartData: healthKitManager.stepData)
                     
-                    VStack {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Label("Averages", systemImage: "calendar")
-                                    .font(.title3.bold())
-                                    .foregroundStyle(.red)
-                                Text("Last 28 Days")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                            }
-                                
-                            Spacer()
-                                
-                            Image(systemName: "chevron.right")
-                                .foregroundStyle(.secondary)
-                        }
-                        .padding(.bottom, 12)
-                       
-                        RoundedRectangle(cornerRadius: 12)
-                            .frame(height: 240)
-                            .foregroundStyle(.secondary)
-                    }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(.secondarySystemBackground))
-                    )
+                    StepPieChart(chartData: ChartMath.averageWeekDayCount(for: healthKitManager.stepData))
                 }
             }
             .padding()
