@@ -6,6 +6,9 @@ class HealthKitManager {
     let store = HKHealthStore()
     let types: Set = [HKQuantityType(.stepCount), HKQuantityType(.bodyMass)]
     
+    var stepData: [HealthMetric] = []
+    var weightData: [HealthMetric] = []
+    
     func fetchStatistics(type: HKQuantityTypeIdentifier, options: HKStatisticsOptions) async {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: .now)
@@ -21,10 +24,29 @@ class HealthKitManager {
             anchorDate: endDate,
             intervalComponents: .init(day: 1)
         )
+        
         do {
             let data = try await query.result(for: store)
+            switch type {
+            case .stepCount: stepData = data.statistics().map {
+                    createHealthMetricObject(type: .steps, statistic: $0)
+                }
+            case .bodyMass: weightData = data.statistics().map {
+                    createHealthMetricObject(type: .weight, statistic: $0)
+                }
+            default: break
+            }
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func createHealthMetricObject(type: HealthMetricContext, statistic: HKStatistics) -> HealthMetric {
+        switch type {
+        case .steps:
+            return HealthMetric(date: statistic.startDate, value: statistic.sumQuantity()?.doubleValue(for: .count()) ?? 0)
+        case .weight:
+            return HealthMetric(date: statistic.startDate, value: statistic.mostRecentQuantity()?.doubleValue(for: .pound()) ?? 0)
         }
     }
     
